@@ -49,13 +49,16 @@ app.get("*", async (req, res, next) => {
     const pageContext = await renderPage(pageContextInit);
     //console.dir(pageContext);
     if (pageContext.errorWhileRendering) {
-        // eslint-disable-next-line no-console
-        console.error(pageContext.abortReason);
+        console.log(pageContext.abortReason);
+    } else {
+        console.log("Everything Fine");
     }
     const { httpResponse } = pageContext;
     if (!httpResponse) {
+        console.log("True", httpResponse);
         return next();
     } else {
+        console.log("False", httpResponse);
         const { body, statusCode, headers, earlyHints } = httpResponse;
         if (res.writeEarlyHints) res.writeEarlyHints({ link: earlyHints.map((e) => e.earlyHintLink) });
         headers.forEach(([name, value]) => res.setHeader(name, value));
