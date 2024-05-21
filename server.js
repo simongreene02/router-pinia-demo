@@ -65,7 +65,7 @@ async function startServer() {
     });
 
     // eslint-disable-next-line no-undef
-    const port = process.env.PORT || 8192;
+    const port = process.env.PORT || 3000;
     app.listen(port);
     // eslint-disable-next-line no-console
     console.log(`Server running at http://localhost:${port}`);
