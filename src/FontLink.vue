@@ -10,4 +10,5 @@
         href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"
         rel="stylesheet"
     />
+    <link rel="icon" href="data:," />
 </template>
