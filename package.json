@@ -1,0 +1,39 @@
+{
+  "name": "router-pinia-demo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prod": "npm run build && npm run server:prod",
+    "server:prod": "cross-env NODE_ENV=production node ./server",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/",
+    "ssr": "mv vite.config.js vite.config.js.tmp && sed 's/prerender\\:\\ true/prerender\\:\\ false/' vite.config.js.tmp > vite.config.js && rm -f vite.config.js.tmp && npm run prod",
+    "ssg": "mv vite.config.js vite.config.js.tmp && sed 's/prerender\\:\\ false/prerender\\:\\ true/' vite.config.js.tmp > vite.config.js && rm -f vite.config.js.tmp && npm run build"
+  },
+  "dependencies": {
+    "@auth0/auth0-vue": "^2.3.3",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "express": "^4.19.2",
+    "express-openid-connect": "^2.17.1",
+    "pinia": "^2.1.7",
+    "vike": "^0.4.171",
+    "vike-pinia": "^0.0.4",
+    "vike-vue": "^0.6.6",
+    "vue": "^3.4.21",
+    "vuetify": "^3.6.6"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.2.8"
+  }
+}
