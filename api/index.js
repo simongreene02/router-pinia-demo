@@ -9,6 +9,8 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = `${__dirname}`;
 
+console.log(root);
+
 import { auth } from "express-openid-connect";
 
 const app = express();
@@ -44,7 +46,9 @@ app.get("*", async (req, res, next) => {
     const pageContextInit = {
         urlOriginal: req.originalUrl
     };
+    console.log(pageContextInit);
     const pageContext = await renderPage(pageContextInit);
+    console.dir(pageContext);
     if (pageContext.errorWhileRendering) {
         // eslint-disable-next-line no-console
         console.error(pageContext.abortReason);
