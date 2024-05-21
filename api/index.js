@@ -48,7 +48,7 @@ app.get("*", async (req, res, next) => {
     };
     console.log(pageContextInit);
     const pageContext = await renderPage(pageContextInit);
-    console.dir(pageContext);
+    //console.dir(pageContext);
     if (pageContext.errorWhileRendering) {
         // eslint-disable-next-line no-console
         console.error(pageContext.abortReason);
