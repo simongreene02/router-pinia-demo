@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "prod": "npm run build && npm run server:prod",
-    "server:prod": "cross-env NODE_ENV=production node ./server",
+    "server:prod": "cross-env NODE_ENV=production node api/index.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "ssr-noserver": "mv vite.config.js vite.config.js.tmp && sed 's/prerender\\:\\ true/prerender\\:\\ false/' vite.config.js.tmp > vite.config.js && rm -f vite.config.js.tmp && npm run build",
