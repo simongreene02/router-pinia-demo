@@ -9,8 +9,6 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = `${__dirname}`;
 
-console.log(root);
-
 import { auth } from "express-openid-connect";
 
 const app = express();
@@ -43,6 +41,7 @@ const config = {
 app.use(auth(config));
 
 app.get("*", async (req, res, next) => {
+    console.log(root);
     const pageContextInit = {
         urlOriginal: req.originalUrl
     };
